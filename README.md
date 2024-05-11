@@ -129,7 +129,7 @@ git clone repo
 cd path_to_dir
 ```
 
-2. Install MySQL and Config
+2. Install MySQL and Config (Or Match with config/app_config.py if you want)
 ```yaml
 Address : localhost
 Port : 3306
@@ -196,7 +196,7 @@ or
 
 2. 동작 과정 캡쳐 및 gif로 보여주는게 좋을 듯
 
-3. 웹페이지 호스팅
+3. 웹페이지 호스팅을 위한 (CI/CD)
 
 4. 코드리팩토링, 코드 진도 빼는거중 뭘 먼저해야하는가? 하나를 먼저 집중해서 해야함 (N모 회사는 코드 리팩토링을 2주에 1회 날을 잡고 실행한다고 한다)
 
