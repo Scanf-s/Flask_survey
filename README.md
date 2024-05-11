@@ -208,6 +208,5 @@ or
 7. API Reverse Refactoring에 대해서 찾아보도록 하자.
 
 ### 버그 내역
-1. admin page question_list
-set deactivate 버튼을 클릭하면 false로 바뀌어야 하는데, 반영되지 않음. 수정 필요
+1. ~admin page question_list set deactivate 버튼을 클릭하면 false로 바뀌어야 하는데, 반영되지 않음. 수정 필요~ **(수정 완료)**
 
