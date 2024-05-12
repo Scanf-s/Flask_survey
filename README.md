@@ -13,7 +13,7 @@
 ## 개발 환경
 ![](https://img.shields.io/badge/AMD-ED1C24?style=for-the-badge&logo=amd&logoColor=white)
 ![](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
-![](https://img.shields.io/badge/Poetry-60A5FA?style=for-the-badge&logo=poetry&logoColor=white)
+![](https://img.shields.io/badge/Docker-2496ED?style=for-the-badge&logo=docker&logoColor=white)
 
 ## 사용 기술
 ![](https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white)
@@ -26,145 +26,40 @@
 
 ## 프로젝트 구조
 ```yaml
-Project_SIMRITEST
-│  .gitignore
-│  app.py
-│  poetry.lock
-│  pyproject.toml
-│  README.md
-│  requirements.txt
-│
-├─.idea
-│  │  .gitignore
-│  │  encodings.xml
-│  │  material_theme_project_new.xml
-│  │  misc.xml
-│  │  modules.xml
-│  │  poetry.xml
-│  │  Project_SIMRITEST.iml
-│  │  vcs.xml
-│  │
-│  └─inspectionProfiles
-│          profiles_settings.xml
-│
-├─config
-│  │  db.py
-│  │  __init__.py
-│  │
-│  └─__pycache__
-│          db.cpython-312.pyc
-│          __init__.cpython-312.pyc
-│
-├─forms
-│      Answerform.py
-│      Userform.py
-│      __init__.py
-│
-├─migrations
-│  │  alembic.ini
-│  │  env.py
-│  │  README
-│  │  script.py.mako
-│  │
-│  ├─versions
-│  │  │  51f5c927dbbc_.py
-│  │  │  be5e349d24f1_.py
-│  │  │  cabd2c25fca7_.py
-│  │  │  f71bfd336e46_.py
-│  │  │
-│  │  └─__pycache__
-│  │          be5e349d24f1_.cpython-312.pyc
-│  │
-│  └─__pycache__
-│          env.cpython-312.pyc
-│
-├─models
-│  │  model_definitions.py
-│  │  __init__.py
-│  │
-│  └─__pycache__
-│          model_definitions.cpython-312.pyc
-│          __init__.cpython-312.pyc
-│
-├─templates
-│  │  base.html
-│  │
-│  ├─admin
-│  │      admin_home.html
-│  │      answer_list.html
-│  │      admin_login.html
-│  │      question_list.html
-│  │      register.html
-│  │
-│  ├─home
-│  │      index.html
-│  │      result.html
-│  │      userinfo.html
-│  │
-│  └─question
-│          question_detail.html
-│
-├─views
-│  │  admin_views.py
-│  │  main_views.py
-│  │  question_views.py
-│  │  __init__.py
-│  │
-│  └─__pycache__
-│          admin_views.cpython-312.pyc
-│          main_views.cpython-312.pyc
-│          question_views.cpython-312.pyc
-│          __init__.cpython-312.pyc
-│
-└─__pycache__
-        app.cpython-312.pyc
 ```
 
 ## 실행방법
-### MAC OS
-
-1. Clone repo
+#### 1. Clone repo in TERMINAL
 ```bash
 git clone repo
 cd path_to_dir
 ```
 
-2. Install Docker and run below commands in terminal
+#### 2. Install Docker
+[Download Link](https://www.docker.com/products/docker-desktop/)
+
+#### 3. Download Docker Image and Compose in TERMINAL
 ```bash
-docker compose up --build
+docker pull sullungim/flask-web
+docker compose up  //automatically compose mysql database
 ```
 
-3. Flask-migrate
-In docker web subcontainer, open EXEC (terminal) and run below commands
+#### 4. Flask-migrate
+In docker web sub-container, open EXEC (terminal) and run below commands
 ```bash
 flask db init
 flask db migrate
 flask db upgrade
 ```
 
-4. Run
+#### 5. Run
 ```yaml
 Open your web browser, connect to 127.0.0.1:5000/
 Admin page route : 127.0.0.1/admin
-Go to admin page, in question tab, add a new question first!!
+Go to admin page, click question tab, add new questions first!!
 ```
 
-### 프로젝트 수행하면서 생각해볼 사항
-1. 프로젝트 플로우 차트 그리는게 매우 좋은 경험이 될 수 있다.
-플로우 차트를 이용해서 일정 관리, 프로젝트 관리를 무조건 해야한다!!! (소프트웨어 공학)
 
-2. 동작 과정 캡쳐 및 gif로 보여주는게 좋을 듯
-
-3. 웹페이지 호스팅을 위한 (CI/CD)
-
-4. 코드리팩토링, 코드 진도 빼는거중 뭘 먼저해야하는가? 하나를 먼저 집중해서 해야함 (N모 회사는 코드 리팩토링을 2주에 1회 날을 잡고 실행한다고 한다)
-
-5. 인증과 인가란???
-
-6. 면접때 해당 라이브러리를 왜 사용했는지 정확하게 말해야한다 
-예를 들어 flask-login을 왜 사용했는지? 그냥 flask route로 간단하게 구현하면 되지 않을까?
-
-7. API Reverse Refactoring에 대해서 찾아보도록 하자.
 
 ### 패치 내역
 #### 2024.05.11
