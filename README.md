@@ -124,71 +124,30 @@ Project_SIMRITEST
 ### MAC OS
 
 1. Clone repo
-```yaml
+```bash
 git clone repo
 cd path_to_dir
 ```
 
-2. Install MySQL and Config (Or Match with config/app_config.py if you want)
+2. Install Docker and run below commands in terminal
+```bash
+docker compose up --build
+```
+
+3. Flask-migrate
+In docker web subcontainer, open EXEC (terminal) and run below commands
+```bash
+flask db init
+flask db migrate
+flask db upgrade
+```
+
+4. Run
 ```yaml
-Address : localhost
-Port : 3306
-Username : root
-password : 123123
-Database Name : simritest
+Open your web browser, connect to 127.0.0.1:5000/
+Admin page route : 127.0.0.1/admin
+Go to admin page, in question tab, add a new question first!!
 ```
-
-```sql
-// open mysql workbench, run below command
-create database simritest;
-```
-
-3. Generate python virtual environment, Activate
-```yaml
-python3 -m venv .venv
-source ./.venv/bin/activate
-```
-
-4. Install Poetry and Dependencies
-```yaml
-pip install poetry
-
-poetry install // install dependencies
-poetry env use path_to_project/.venv/bin/python // set interpreter
-```
-
-5. Flask-migrate
-```yaml
-1. flask db init
-or
-1. path_to_project/.venv/bin/python -m flask db init
-// if cryptography error occurs
-// pip install cryptography
-
-2. flask db migrate
-or
-2. path_to_project/.venv/bin/python -m flask db migrate
-// if this command occurs 'Error : Can't locate revision identified by 'blabla'',
-// open mysql workbench and drop table 'alembic_version'
-// and type flask db migrate again.
-
-3. flask db upgrade
-or
-3. path_to_project/.venv/bin/python -m flask db upgrade
-```
-
-6. Run
-```yaml
-1. path_to_project/.venv/bin/python -m flask run
-or
-1. flask run
-
-// open your web browser, connect to 127.0.0.1:5000/
-// admin page route : 127.0.0.1/admin
-// go to admin page, in question tab, add new at least 5 questions
-```
-
-### Windows (추가 예정)
 
 ### 프로젝트 수행하면서 생각해볼 사항
 1. 프로젝트 플로우 차트 그리는게 매우 좋은 경험이 될 수 있다.
@@ -207,6 +166,11 @@ or
 
 7. API Reverse Refactoring에 대해서 찾아보도록 하자.
 
-### 버그 내역
-1. ~admin page question_list set deactivate 버튼을 클릭하면 false로 바뀌어야 하는데, 반영되지 않음. 수정 필요~ **(수정 완료)**
+### 패치 내역
+#### 2024.05.11
+- ~admin page question_list set deactivate 버튼을 클릭하면 false로 바뀌어야 하는데, 반영되지 않음. 수정 필요~ **(수정 완료)**
+
+#### 2024.05.13
+- 기존 프로젝트를 불편하게 구성해야했는데, Docker를 도입하여 기존 과정을 자동화하여 손쉽게 프로젝트를 다운받아서 실행할 수 있도록 개선하였습니다.
+
 
