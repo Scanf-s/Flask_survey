@@ -53,7 +53,7 @@ flask db upgrade
 ```
 
 #### 5. Run
-```yaml
+```
 Open your web browser, connect to 127.0.0.1:5000/
 Admin page route : 127.0.0.1/admin
 Go to admin page, click question tab, add new questions first!!
