@@ -26,6 +26,59 @@
 
 ## 프로젝트 구조
 ```yaml
+.
+├── Dockerfile
+├── README.Docker.md
+├── README.md
+├── app.py
+├── compose.yaml
+├── config
+│   ├── __init__.py
+│   ├── app_config.py
+│   └── db.py
+├── forms
+│   ├── AdminForm.py
+│   ├── Answerform.py
+│   ├── QuestionForm.py
+│   ├── Userform.py
+│   └── __init__.py
+├── models
+│   ├── __init__.py
+│   └── model_definitions.py
+├── requirements.txt
+├── static
+│   └── flask_paginate.css
+├── templates
+│   ├── admin
+│   │   ├── add_question.html
+│   │   ├── admin_home.html
+│   │   ├── admin_login.html
+│   │   ├── answer_list.html
+│   │   ├── error
+│   │   │   ├── 404.html
+│   │   │   └── Integrity.html
+│   │   ├── question_list.html
+│   │   └── register.html
+│   ├── base.html
+│   ├── home
+│   │   ├── index.html
+│   │   └── userinfo.html
+│   └── question
+│       ├── question_detail.html
+│       └── result.html
+└── views
+    ├── __init__.py
+    ├── admin_util
+    │   ├── __init__.py
+    │   ├── admin_error_handler.py
+    │   └── utils.py
+    ├── admin_views.py
+    ├── main_views.py
+    ├── question_util
+    │   ├── __init__.py
+    │   ├── question_error_handler.py
+    │   └── utils.py
+    └── question_views.py
 ```
 
 ## 실행방법
