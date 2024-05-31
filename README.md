@@ -44,21 +44,12 @@ docker pull sullungim/flask-web
 docker compose up  //automatically compose mysql database
 ```
 
-#### 4. Flask-migrate
-In docker web sub-container, open EXEC (terminal) and run below commands
-```bash
-flask db init
-flask db migrate
-flask db upgrade
-```
-
-#### 5. Run
+#### 4. Run
 ```
 Open your web browser, connect to 127.0.0.1:5000/
 Admin page route : 127.0.0.1/admin
 Go to admin page, click question tab, add new questions first!!
 ```
-
 
 
 ### 패치 내역
